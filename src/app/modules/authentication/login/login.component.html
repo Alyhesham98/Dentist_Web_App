@@ -1,0 +1,46 @@
+<div class="login">
+    <div class="container">
+        <div class="clearfix">
+            <div class="row h-100">
+                <div class="col-12 d-none d-xl-flex col-xl-6 d-flex justify-content-center align-items-center">
+                    <img class="img-fluid" src="assets/bg.svg" width="700" height="700">
+                </div>
+                <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center">
+                    <form style="min-width: 400px;" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+                        <!-- LOADING SPINNER -->
+                        <div *ngIf="isLoading" class="d-flex justify-content-center">
+                            <div class="spinner-grow text-light" style="width: 3rem; height: 3rem; margin-right: 3px;"
+                                role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-light" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="text-center mb-3">
+                            <img class="img-fluid" src="assets/avatar.svg" width="150" height="150">
+                            <h2 class="title">welcome</h2>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" placeholder="Username" class="form-control" id="usernameInput"
+                                formControlName="username">
+                            <label for="usernameInput" class="form-label">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Password"
+                                formControlName="password">
+                            <label for="passwordInput" class="form-label">Password</label>
+                            <a href="" class="form-text float-end fw-bold">Forgot your password?</a>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-secondary" [disabled]="loginForm.invalid">LOGIN
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>

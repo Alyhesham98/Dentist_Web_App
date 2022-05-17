@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="mainContainer">
+  <h3 class="mx-1 my-3 fw-bold noprint">INVENTORY</h3>
+
+  <div class="customCard">
+    <div class="row form-group">
+      <div class="col-md-3 col-12 noprint">
+        <label for="date" class="form-label">Filter by Date:</label>
+        <input type="date" id="date" [(ngModel)]="searchValue" class="form-control">
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-3 col-12 print">
+        <label for="doctorName" class="form-label">Filter by Doctor Name:</label>
+        <select id="doctorName" [(ngModel)]="searchValue" class="form-select">
+          <option value="0">No Doctor Selected</option>
+          <option *ngFor="let doctor of allDoctors" value="{{doctor.firstName}} {{doctor.lastName}}">
+            {{doctor.firstName}} {{doctor.lastName}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mt-4 print">
+      <table class="table mt-3" *ngIf="sessionsData" datatable>
+        <thead>
+          <tr>
+            <th scope="col">Patient ID</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Disease</th>
+            <th scope="col">Sub-Disease</th>
+            <th scope="col">Date of Session</th>
+            <th scope="col " class="noprint">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of sessionsData | searchfilter:searchValue">
+            <td>{{row.patientId}}</td>
+            <td>{{row.patient.patientName}}</td>
+            <td>{{row.doctorName}}</td>
+            <td>{{row.disease.name}}</td>
+            <td>{{row.subDiease.name}}</td>
+            <td>{{row.startDate | date:'short'}}</td>
+            <td class="noprint">
+              <button (click)="patientDetails(row.patientId)" class="btn btn-success mx-3 ">Patient Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex">
+        <button class="btn btn-primary" (click)="printPage()" style="width: 150px;">Print</button>
+      </div>
+      <!-- LOADING SPINNER -->
+      <div *ngIf="isLoading" class="d-flex justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; margin-right: 3px;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

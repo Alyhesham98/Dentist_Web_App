@@ -1,0 +1,174 @@
+<div class="container-fluid noprint">
+    <div class="row">
+        <div class="col-1 p-0 d-none d-lg-block">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-11 p-0">
+            <app-header></app-header>
+            <div class="mainContainer">
+                <h3 class="mx-1 my-3 fw-bold"><a routerLink="/home/patients">
+                        <fa-icon [icon]="faChevronCircleLeft"></fa-icon>
+                    </a> PATIENT DETAILS</h3>
+                <div class="customCard">
+                    <div class="row">
+                        <div class="col-4" *ngIf="patientDetails">
+                            <h5>Name</h5>
+                            <input class="form-control" id="disabledInput" style="width: 350px;" type="text"
+                                placeholder="{{ patientDetails.patientName }}" disabled>
+                        </div>
+                        <div class="col-4" *ngIf="patientDetails">
+                            <h5>Age</h5>
+                            <input class="form-control" id="disabledInput" style="width: 350px;" type="text"
+                                placeholder="{{ patientDetails.age }}" disabled>
+                        </div>
+                        <div class="col-4" *ngIf="patientDetails">
+                            <h5>Mobile Phone</h5>
+                            <input class="form-control" id="disabledInput" style="width: 350px;" type="text"
+                                placeholder="{{ patientDetails.mobilePhone }}" disabled>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-4" *ngIf="patientDetails">
+                            <h5>Address</h5>
+                            <input class="form-control" id="disabledInput" style="width: 350px;" type="text"
+                                placeholder="{{ patientDetails.address }}" disabled>
+                        </div>
+                        <div class="col-8" *ngIf="patientDetails">
+                            <h5>National ID</h5>
+                            <input class="form-control" id="disabledInput" style="width: 350px;" type="text"
+                                placeholder="{{ patientDetails.nationalId }}" disabled>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col text-center">
+                            <button class="button" (click)="diagnoseDetails(patientDetails.id)"><span>New Session
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="mainContainer">
+                <h3 class="mx-1 my-3 fw-bold">PATIENT SESSIONS</h3>
+                <div class="customCard">
+                    <div class="row">
+                        <div class="col">
+                            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                <table class="table table-hover mb-0" *ngIf="patientSessions" datatable>
+                                    <thead>
+
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Doctor Name</th>
+                                            <th scope="col">Tooth Name</th>
+                                            <th scope="col">Disease</th>
+                                            <th scope="col">Sub-Disease</th>
+                                            <th scope="col">Date of Session</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let session of patientSessions">
+                                            <td scope="row">{{session.id}}</td>
+                                            <td>{{session.doctorName}}</td>
+                                            <td>{{session.numberOfTeeth}}</td>
+                                            <td>{{session.disease.name}}</td>
+                                            <td>{{session.subDiease.name}}</td>
+                                            <td>{{session.startDate | date}}</td>
+                                            <td>
+                                                <button (click)="sessionDetails(session)" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                    class="btn btn-success">Details</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Session Details Modal -->
+<div class="modal fade print" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Session Details</h5>
+                <button type="button" class="btn-close noprint" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Patient Name</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.patient.patientName }}" disabled>
+                    </div>
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Patient ID</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.patientId }}" disabled>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Doctor Name</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.doctorName }}" disabled>
+                    </div>
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Tooth Name</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.numberOfTeeth }}" disabled>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Disease</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.disease.name }}" disabled>
+                    </div>
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Sub-Disease</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.subDiease.name }}" disabled>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Date of Session</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.startDate | date }}" disabled>
+                    </div>
+                    <div class="col-6" *ngIf="currentSession">
+                        <h5>Medicine</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.medicine }}" disabled>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12" *ngIf="currentSession?.notes">
+                        <h5>Notes</h5>
+                        <input class="form-control" id="disabledInput" type="text"
+                            placeholder="{{ currentSession.notes }}" disabled>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer noprint">
+                <button type="button" class="btn btn-primary" (click)="printPage()">Print</button>
+                <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

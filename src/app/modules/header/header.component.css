@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    color: #3F3D56;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1:hover {
+    cursor: pointer;
+    color: #61A0FD;
+}

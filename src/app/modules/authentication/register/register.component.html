@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="mainContainer">
+    <h3 class="mx-1 my-3 fw-bold noprint">REGISTERATION</h3>
+    <div class="customCard">
+        <div class="row">
+            <div class="col-12 d-none d-xxl-flex col-xxl-6 d-flex justify-content-center align-items-center">
+                <img class="img-fluid" src="assets/bg.svg" width="700" height="700">
+            </div>
+            <div class="col-12 col-xxl-6 d-flex justify-content-center align-items-center">
+                <form class="row" style="max-width: 500px;" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+                    <!-- LOADING SPINNER -->
+                    <div *ngIf="isLoading" class="d-flex justify-content-center">
+                        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; margin-right: 3px;"
+                            role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center">
+                        <br>
+                        <img class="img-fluid" src="assets/avatar.svg" width="150" height="150">
+                        <h2 class="title">register</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" formControlName="phone">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="age" formControlName="age">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" formControlName="userName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="role" class="form-label">Role</label>
+                        <select id="role" class="form-select" formControlName="role">
+                            <option selected disabled>Choose...</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="assistant">Assistant</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" formControlName="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" formControlName="password">
+                    </div>
+                    <div class="col-12 d-grid mt-3">
+                        <button type="submit" class="btn btn-primary btn-block"
+                            [disabled]="registerForm.invalid">REGISTER</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

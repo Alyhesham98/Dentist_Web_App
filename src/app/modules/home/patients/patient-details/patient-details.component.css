@@ -1,0 +1,99 @@
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.mainContainer {
+    font-family: 'Cairo', sans-serif;
+    margin: 20px;
+}
+
+.fineLine {
+    border-top: 1px solid #ebecec !important;
+    padding-top: 15px;
+}
+
+.customCard {
+    background-color: #f7f7f9;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+span {
+    font-weight: 700;
+}
+
+fa-icon {
+    color: #7E7C8D;
+}
+
+fa-icon:hover {
+    color: #61A0FD;
+}
+
+.button {
+    border-radius: 4px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(7, 7, 100, 1) 0%, rgba(82, 126, 179, 1) 0%, rgba(153, 187, 204, 1) 0%, rgba(0, 148, 232, 1) 0%, rgba(5, 123, 182, 1) 0%, rgba(12, 137, 197, 1) 89%, rgba(3, 138, 199, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+@media print {
+    .noprint {
+        display: none !important;
+        height: 0;
+    }
+    .print {
+        display: block;
+    }
+    footer {
+        display: none
+    }
+    header {
+        display: none
+    }
+}

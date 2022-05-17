@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="mainContainer">
+  <h3 class="mx-1 my-3 fw-bold">CALENDAR</h3>
+  <div class="customCard">
+    <ejs-schedule width="100%" height="600px" [selectedDate]="selectedDate" [views]="views" currentView='TimelineWeek'
+      [eventSettings]="eventSettings" [group]='group' (renderCell)="onRenderCell($event)">
+      <e-resources>
+        <e-resource field="RoomId" title="Room" name="Rooms" [dataSource]="roomDataSource"
+          [allowMultiple]="allowMultipleRoom" textField='text' idField='id' colorField='color'></e-resource>
+        <e-resource field="OwnerId" title="Owner" name="Owners" [dataSource]="ownerDataSource"
+          [allowMultiple]="allowMultipleOwner" textField='text' idField='id' colorField='color' groupIDField='groupId'>
+        </e-resource>
+      </e-resources>
+    </ejs-schedule>
+  </div>
+</div>

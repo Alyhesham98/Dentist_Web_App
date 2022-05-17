@@ -1,0 +1,57 @@
+.my-custom-scrollbar {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.mainContainer {
+  font-family: 'Cairo', sans-serif;
+  margin: 20px;
+}
+
+.fineLine {
+  border-top: 1px solid #ebecec !important;
+  padding-top: 15px;
+}
+
+.customCard {
+  background-color: #f7f7f9;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+span {
+  font-weight: 700;
+}
+
+fa-icon {
+  color: #7E7C8D;
+}
+
+fa-icon:hover {
+  color: #61A0FD;
+}
+
+button {
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #3F3D56;
+}
+
+/* made this so i could visually center the shapes */

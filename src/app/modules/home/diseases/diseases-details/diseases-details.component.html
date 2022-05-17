@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1 p-0 d-none d-lg-block">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-11 p-0">
+            <app-header></app-header>
+            <div class="mainContainer">
+                <h3 class="mx-1 my-3 fw-bold"><a routerLink="/home/diseases">
+                        <fa-icon [icon]="faChevronCircleLeft"></fa-icon>
+                    </a> {{diseaseName | uppercase}} DETAILS</h3>
+                <div class="customCard">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Sub-Disease Name</th>
+                                <th>Information</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let dataItem of subDiseaseData">
+                                <td>{{dataItem.id}}</td>
+                                <td>{{dataItem.name}}</td>
+                                <td>{{dataItem.information}}</td>
+                                <td>
+                                    <button (click)="onEdit(dataItem)" class="btn btn-primary" type="button"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" (click)="clickAddSubDisease()">Add Sub-Disease</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sub-Disease Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sub-Disease Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label for="subDiseaseName" class="form-label">Sub-Disease Name</label>
+                            <input type="text" class="form-control" formControlName="subDiseaseName" id="subDiseaseName"
+                                aria-describedby="subDiseaseName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subDiseaseInfo" class="form-label">Information</label>
+                            <input type="text" class="form-control" formControlName="subDiseaseInfo" id="subDiseaseInfo"
+                                aria-describedby="subDiseaseInfo">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" *ngIf="showUpdate" class="btn btn-primary"
+                        (click)="updateSubDiseaseDetails()">
+                        Update
+                        Sub-Disease</button>
+                    <button type="button" class="btn btn-primary" *ngIf="showAdd" (click)="postSubDiseaseDetails()"> Add
+                        Sub-Disease</button>
+                    <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

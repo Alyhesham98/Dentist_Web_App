@@ -1,0 +1,190 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1 p-0 d-none d-lg-block">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-11 p-0">
+            <app-header></app-header>
+            <div class="mainContainer">
+                <h3 class="mx-1 my-3 fw-bold"><a routerLink="" (click)="goBack()">
+                        <fa-icon [icon]="faChevronCircleLeft"></fa-icon>
+                    </a> CHOOSE A TOOTH</h3>
+                <div class="customCard">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center" style="margin-top: 20px;">
+                            <img src="/assets/teeth.png" usemap="#image-map">
+                            <map name="image-map">
+                                <area target="_self" alt="⎿8" title="⎿8" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="488,117,496,128,490,161,474,157,464,139,464,118,475,116" shape="poly">
+                                <area target="_self" alt="⎿7" title="⎿7" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="453,113,462,124,462,140,454,151,454,166,445,163,438,151,431,138,430,122,434,111"
+                                    shape="poly">
+                                <area target="_self" alt="⎿6" title="⎿6" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="392,141,400,158,406,167,414,165,424,147,428,134,427,122,419,113,405,111,395,115,391,126"
+                                    shape="poly">
+                                <area target="_self" alt="⎿5" title="⎿5" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="366,119,364,136,370,145,376,153,387,140,389,120,376,113" shape="poly">
+                                <area target="_self" alt="⎿4" title="⎿4" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="337,122,342,142,347,161,356,147,361,131,362,121,352,114,345,115,333,134"
+                                    shape="poly">
+                                <area target="_self" alt="⎿3" title="⎿3" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="326,118,315,119,310,124,308,132,311,141,315,151,320,158,330,152,333,137,335,120"
+                                    shape="poly">
+                                <area target="_self" alt="⎿2" title="⎿2" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="294,123,285,123,282,130,285,139,290,149,298,152,302,142,306,132,303,122"
+                                    shape="poly">
+                                <area target="_self" alt="⎿1" title="⎿1" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="255,120,278,120,280,136,273,148,263,153,254,139,250,126" shape="poly">
+                                <area target="_self" alt="1⏌" title="1⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="235,119,221,120,217,129,221,140,230,151,239,151,244,138,248,130,246,120"
+                                    shape="poly">
+                                <area target="_self" alt="2⏌" title="2⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="199,122,193,126,196,138,201,151,210,152,213,139,214,129,212,121"
+                                    shape="poly">
+                                <area target="_self" alt="3⏌" title="3⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="187,120,171,118,163,129,169,143,175,160,188,143,192,128" shape="poly">
+                                <area target="_self" alt="4⏌" title="4⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="153,114,139,119,138,134,146,156,150,161,160,141,162,121" shape="poly">
+                                <area target="_self" alt="5⏌" title="5⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="123,113,111,119,109,133,116,150,123,155,134,139,135,119" shape="poly">
+                                <area target="_self" alt="6⏌" title="6⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="93,111,79,114,72,120,72,138,81,163,92,171,105,148,108,121,105,113"
+                                    shape="poly">
+                                <area target="_self" alt="7⏌" title="7⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="65,112,50,113,40,115,37,130,40,145,44,162,53,169,64,150,72,120"
+                                    shape="poly">
+                                <area target="_self" alt="8⏌" title="8⏌" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="22,114,10,119,3,128,11,149,16,157,29,147,37,131,36,117" shape="poly">
+                                <area target="_self" alt="⎾8" title="⎾8" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="479,216,489,219,490,240,488,256,472,260,455,257,452,244,455,230,460,218"
+                                    shape="poly">
+                                <area target="_self" alt="⎾7" title="⎾7" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="411,235,419,215,429,211,447,211,451,234,449,248,443,259,425,260,412,255"
+                                    shape="poly">
+                                <area target="_self" alt="⎾6" title="⎾6" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="369,242,377,214,386,206,402,217,410,239,405,255,385,260,370,255"
+                                    shape="poly">
+                                <area target="_self" alt="⎾5" title="⎾5" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="345,236,350,213,356,205,362,220,369,243,365,253,354,256,344,250"
+                                    shape="poly">
+                                <area target="_self" alt="⎾4" title="⎾4" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="316,240,323,219,328,206,335,216,338,235,340,250,325,257,317,249"
+                                    shape="poly">
+                                <area target="_self" alt="⎾3" title="⎾3" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="291,234,298,216,305,210,310,224,315,240,311,251,300,254,288,247"
+                                    shape="poly">
+                                <area target="_self" alt="⎾2" title="⎾2" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="271,234,274,223,278,216,285,225,286,241,287,250,279,248,270,248"
+                                    shape="poly">
+                                <area target="_self" alt="⎾1" title="⎾1" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="252,238,255,223,259,213,264,228,269,241,267,247,256,248,251,247"
+                                    shape="poly">
+                                <area target="_self" alt="1⏋" title="1⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="249,243,247,226,242,215,234,220,233,235,230,246,241,249" shape="poly">
+                                <area target="_self" alt="2⏋" title="2⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="228,246,212,249,212,235,216,222,222,217,228,234" shape="poly">
+                                <area target="_self" alt="3⏋" title="3⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="187,235,193,217,198,211,205,226,212,244,203,252,185,252" shape="poly">
+                                <area target="_self" alt="4⏋" title="4⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="162,232,166,215,170,205,178,222,183,241,177,254,162,254,156,245"
+                                    shape="poly">
+                                <area target="_self" alt="5⏋" title="5⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="133,237,136,221,141,204,149,210,151,225,156,243,152,255,135,254,131,248"
+                                    shape="poly">
+                                <area target="_self" alt="6⏋" title="6⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="131,241,127,220,117,208,91,208,89,228,87,248,101,259,125,260" shape="poly">
+                                <area target="_self" alt="7⏋" title="7⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="48,244,50,230,49,212,63,208,76,211,85,233,85,252,77,263,60,258,50,256"
+                                    shape="poly">
+                                <area target="_self" alt="8⏋" title="8⏋" [routerLink]=""
+                                    (click)="onToothClick($event.target.title)"
+                                    coords="11,244,11,225,15,214,31,216,42,221,45,241,45,256,30,260,12,255"
+                                    shape="poly">
+                            </map>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="mainContainer" *ngIf="toothClicked">
+                <h3 class="mx-1 my-3 fw-bold">SESSION DETAILS</h3>
+                <div class="customCard">
+                    <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup]="sessionForm">
+                        <div class="col-md-6">
+                            <label for="toothName" class="form-label">Tooth Name</label>
+                            <input type="text" class="form-control" id="toothName" formControlName="toothName" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="doctorName" class="form-label">Doctor Name</label>
+                            <select id="doctorName" class="form-select" formControlName="doctorName">
+                                <option *ngFor="let doctor of allDoctors"
+                                    value="{{doctor.firstName}} {{doctor.lastName}}">
+                                    {{doctor.firstName}} {{doctor.lastName}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="diseaseId" class="form-label">Disease</label>
+                            <select id="diseaseId" class="form-select" formControlName="diseaseId"
+                                [(ngModel)]="selectedDisease" (change)="changesubDisease($event)">
+                                <option *ngFor="let disease of allDiseases" value="{{disease.id}}">{{disease.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="subDiseaseId" class="form-label">Sub-Disease</label>
+                            <select id="subDiseaseId" class="form-select" formControlName="subDiseaseId">
+                                <option *ngFor="let subDisease of selectedSubDiseases" value="{{subDisease.id}}">
+                                    {{subDisease.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="medicine" class="form-label">Medicine</label>
+                            <input type="text" class="form-control" id="medicine" formControlName="medicine">
+                        </div>
+                        <div class="col-12">
+                            <label for="notes" class="form-label">Notes</label>
+                            <textarea class="form-control" id="notes" rows="3" formControlName="notes"></textarea>
+                        </div>
+                        <br>
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-primary" [disabled]="sessionForm.invalid">SAVE
+                                SESSION</button>
+                        </div>
+                    </form>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

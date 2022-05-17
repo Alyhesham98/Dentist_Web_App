@@ -1,0 +1,27 @@
+.mainContainer {
+    font-family: 'Cairo', sans-serif;
+    margin: 20px;
+}
+
+.fineLine {
+    border-top: 1px solid #ebecec !important;
+    padding-top: 15px;
+}
+
+.customCard {
+    background-color: #f7f7f9;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+span {
+    font-weight: 700;
+}
